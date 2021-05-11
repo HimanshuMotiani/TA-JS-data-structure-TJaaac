@@ -28,7 +28,9 @@ Answer the following with reason after going through the above code:
 ```js
 function personDetails(person) {
   person.age = 25;
+  console.log(person)
   person = { name: 'John', age: 50 };
+  console.log(person)
   return person;
 }
 var person1 = { name: 'Alex', age: 30 };
