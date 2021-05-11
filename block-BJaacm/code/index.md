@@ -15,21 +15,22 @@ let newUser = user;
 - Take a photo/screenshot and add it to the folder `code`
 
 <!-- To add this image here use ![name](./hello.jpg) -->
+//check the image in files
 
 2. Answer the following with reason:
 
-- `user == newUser;` // output and reason
-- `user === newUser;`
-- `user.name === newUser.name;`
-- `user.name == newUser.name;`
-- `user.sibling == newUser.sibling;`
-- `user.sibling === newUser.sibling;`
-- `user.sibling == allBrothers;`
-- `user.sibling === allBrothers;`
-- `brothersCopy === allBrothers;`
-- `brothersCopy == allBrothers;`
-- `brothersCopy == user.sibling;`
-- `brothersCopy === user.sibling;`
-- `brothersCopy[0] === user.sibling[0];`
-- `brothersCopy[1] === user.sibling[1];`
-- `user.sibling[1] === newUser.sibling[1];`
+- `user == newUser;` // true have the same address value
+- `user === newUser;` //true have the same address value
+- `user.name === newUser.name;` //true have the same address value
+- `user.name == newUser.name;` //true have the same address value
+- `user.sibling == newUser.sibling;` //true
+- `user.sibling === newUser.sibling;` //true
+- `user.sibling == allBrothers;` // false have different address stored
+- `user.sibling === allBrothers;` //false have different address stored
+- `brothersCopy === allBrothers;` //false have different address stored
+- `brothersCopy == allBrothers;` //false have different address stored
+- `brothersCopy == user.sibling;` //true
+- `brothersCopy === user.sibling;` //true
+- `brothersCopy[0] === user.sibling[0];` //true
+- `brothersCopy[1] === user.sibling[1];` //true
+- `user.sibling[1] === newUser.sibling[1];` //true
