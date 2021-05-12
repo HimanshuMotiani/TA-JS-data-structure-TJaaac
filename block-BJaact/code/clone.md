@@ -104,7 +104,9 @@ let blogs = [
 ];
 
 // Your code goes here
-let clonedBlogs = [...blogs]
+//let clonedBlogs = [...blogs] By this clonedBlogs[0] === blogs[0] return true so we need to clone separtely to make it a different address.
+
+let clonedBlogs = [ {...blogs[0]},{...blogs[1]},{...blogs[2]}]; //clonedBlogs[0] === blogs[0] return false //for seperate cloning of each object in array  
 ```
 
 5. Clone the `question` variable into a new variable named `questionClone`
@@ -130,7 +132,9 @@ var questions = [
 ];
 
 // Your code goes here
-let questionClone = [ ...questions ]
+let questionClone = [ {...questions[0], responses : [...questions[0].responses]},
+
+{...questions[1], responses: [...questions[1].responses]}]
 ```
 
 6. Clone the `allBlogs` variable into a new variable named `allBlogsClone`
@@ -158,7 +162,7 @@ var allBlogs = {
 };
 
 // Your code goes here
-let allBlogsClone = {...allBlogs , author : {...allBlogs.author}, comments : [...allBlogs.comments]};
+let allBlogsClone = {...allBlogs , author : {...allBlogs.author}, comments : [{...allBlogs.comments[0]},{...allBlogs.comments[1]}]};
 ```
 
 7. Clone the `person` variable into a new variable named `clonedPerson`
@@ -192,16 +196,15 @@ let person = [
 ];
 
 // Your code goes here
-let clonedPerson = [...person]
+let clonedPerson = JSON.parse(JSON.stringify(person));  //first converts to string then converts to object.
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
 
 ```js
-function cloneObject(user) {
+function cloneObject(obj) {
   // your code
-  user = {...user};
-  return user;
+  return JSON.parse(JSON.stringify(obj)); 
 }
 
 // Run the test below to check your function
